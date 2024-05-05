@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Goofy Encoder</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* mobile */
+        @media (max-width: 1000px) {
+            body {
+                font-size: 50px;
+            }
+            input {
+                font-size: 50px;
+
+            }
+            form {
+                font-size: 50px;
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Goofy Encoder</h1>
+    <form action="/encode" method="POST">
+        <input type="text" name="message" placeholder="Enter message here">
+        <input type="text" name="wrapper" placeholder="Enter goofy text here">
+        <input type="submit" value="Encode">
+    </form>
+    <form action="/decode" method="POST">
+        <input type="text" name="message" placeholder="Enter message here">
+        <input type="submit" value="Decode">
+    </form>
+</body>
+
+</html>
