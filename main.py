@@ -90,32 +90,6 @@ def wrapDecode(message):
     return dec
 
 
-'''
-choice = input('Would you like to encode or decode a message? (e/d): ')
-if choice == 'e':
-    # ask if they would like to wrap the message in another message
-    wrap = input('Would you like to wrap the encoded message in another message? (y/n): ')
-    if wrap == 'y':
-        user_input = input('Enter the message you want to encrypt and wrap: ')
-        print(wrapEncode(user_input))
-    elif wrap == 'n':
-        user_input = input('Enter the message you want to encrypt: ')
-        print(encode(user_input))
-elif choice == 'd':
-    # ask if they would like to unwrap the message
-    wrap = input('Would you like to unwrap the message? (y/n): ')
-    if wrap == 'y':
-        user_input = input('Enter the message you want to unwrap and decrypt: ')
-        print(wrapDecode(user_input))
-    elif wrap == 'n':
-        user_input = input('Enter the message you want to decrypt: ')
-        print(decode(user_input))
-else:
-    print('Invalid choice. Exiting...')
-    exit()
-'''
-
-# make it a flask website
 app = Flask(__name__)
 
 
@@ -124,7 +98,6 @@ def index():
     return render_template('index.html')
 
 
-# code for index.html
 @app.route('/encode', methods=['POST'])
 def encodeWeb():
     message = request.form['message']
@@ -134,7 +107,6 @@ def encodeWeb():
     return render_template('encode.html', message=message)
 
 
-# code for encode.html
 @app.route('/decode', methods=['POST'])
 def decode():
     message = request.form['message']
@@ -142,8 +114,7 @@ def decode():
     return render_template('decode.html', message=message)
 
 
-# code for decode.html
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=6969)
 
-# run the website with: python main.py
+# run the website with: python main.py (unless you're cringe and still use python2, then use python3 main.py)
